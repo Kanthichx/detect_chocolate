@@ -1,0 +1,6 @@
+path: C:/Users/Admin/detect_chocolate/dataset
+train: images/train
+val: images/val
+
+nc: 5
+names: ['chocalateHershey', 'chocolateBonBon', 'chocolateCookkies', 'chocolateGeentea', 'chocoleteBengBeng']

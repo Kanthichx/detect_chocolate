@@ -1,0 +1,17 @@
+# Python Virtual Environment
+env/
+venv/
+
+# Video Frames & Media Files
+Frame/
+*.MOV
+*.mov
+*.mp4
+
+# YOLO Weights & Output Runs
+runs/
+*.pt
+
+# Python Cache
+__pycache__/
+.vscode/
