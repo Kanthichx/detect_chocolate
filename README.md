@@ -113,9 +113,7 @@ python -c "import torch; print('CUDA available:', torch.cuda.is_available())"
 device="cpu"
 ```
 
-> **📸 ใส่รูปที่ 3:** แคปผลติดตั้ง Package และผลตรวจสอบ CUDA บันทึกเป็น `images/03-installation.png`
 
-<!-- ![ติดตั้ง Dependencies และตรวจสอบ CUDA](images/03-installation.png) -->
 
 ---
 
@@ -147,8 +145,11 @@ ffmpeg -i train_chocolate.mp4 -vf fps=2 Frame/images/%04d.jpg
 > **📸 ใส่รูปที่ 4:** แคปคำสั่งแยกเฟรมและภาพที่ได้ในโฟลเดอร์ `Frame/images` บันทึกเป็น `images/04-extract-frames.png`
 
 <!-- ![แยกเฟรมจากวิดีโอ](images/04-extract-frames.png) -->
+<img width="190" height="265" alt="image" src="https://github.com/user-attachments/assets/ae13b620-f042-47a0-a991-e33092802dd0" />
 
----
+
+<img width="197" height="447" alt="image" src="https://github.com/user-attachments/assets/70a97590-c05d-40cf-9ab0-a4d30786d6a1" />
+
 
 # 🖼️ เริ่ม Label ด้วย Label Studio
 
@@ -165,8 +166,6 @@ label-studio start
 
 หากเป็นการใช้งานครั้งแรก ให้สร้างบัญชีสำหรับเข้าใช้งานระบบในเครื่อง
 
-> **📸 ใส่รูปที่ 5:** แคป CMD ที่รัน Label Studio และหน้าเว็บที่เปิดสำเร็จ บันทึกเป็น `images/05-label-studio-start.png`
-
 <!-- ![เปิด Label Studio](images/05-label-studio-start.png) -->
 
 ---
@@ -177,10 +176,7 @@ label-studio start
 
 กด **Create Project** แล้วตั้งชื่อ เช่น `Chocolate Detection` จากนั้นเลือก Labeling Setup แบบ **Object Detection with Bounding Boxes**
 
-> **📸 ใส่รูปที่ 6:** แคปหน้าสร้าง Project และการเลือก Object Detection with Bounding Boxes บันทึกเป็น `images/06-create-project.png`
-
-<!-- ![สร้าง Project สำหรับตรวจจับช็อกโกแลต](images/06-create-project.png) -->
-
+ 
 ## 2. นำเข้าภาพ
 
 หากใช้ Local Storage ให้เข้า **Settings → Cloud Storage** แล้วเพิ่ม **Local Files** ระบุ Absolute Local Path เป็นโฟลเดอร์ภาพ เช่น:
@@ -193,13 +189,6 @@ C:\path\to\detect_chocolate-main\Frame\images
 
 สามารถนำเข้าภาพผ่านหน้า Data Import ได้เช่นกัน แต่ก่อนแปลง Dataset ต้องมีภาพต้นฉบับใน `Frame/images` และตรวจสอบชื่อไฟล์ให้สัมพันธ์กับ JSON ที่ Export
 
-> **📸 ใส่รูปที่ 7:** แคปการตั้งค่า Local Storage โดยให้เห็น Path ของภาพ บันทึกเป็น `images/07-local-storage.png`
-
-<!-- ![ตั้งค่า Local Storage](images/07-local-storage.png) -->
-
-> **📸 ใส่รูปที่ 8:** แคปหน้า Project หลังนำเข้าภาพแล้ว บันทึกเป็น `images/08-imported-images.png`
-
-<!-- ![ภาพที่นำเข้าสำหรับทำ Label](images/08-imported-images.png) -->
 
 ## 3. Classes
 
@@ -236,7 +225,8 @@ C:\path\to\detect_chocolate-main\Frame\images
 
 <!-- ![Labeling Interface และคลาสช็อกโกแลต](images/09-labeling-interface.png) -->
 
----
+<img width="333" height="206" alt="image" src="https://github.com/user-attachments/assets/d238f853-39c8-437f-ae37-0a72873c62ce" />
+
 
 # ✏️ ทำ Bounding Box
 
@@ -248,11 +238,6 @@ C:\path\to\detect_chocolate-main\Frame\images
 
 ควรครอบวัตถุให้พอดีและกำหนดคลาสอย่างสม่ำเสมอ เพื่อให้ข้อมูลเหมาะสำหรับ Train
 
-> **📸 ใส่รูปที่ 10:** แคปภาพที่ลาก Bounding Box และกำหนดชื่อคลาสเรียบร้อยแล้ว บันทึกเป็น `images/10-bounding-box.png`
-
-<!-- ![ตัวอย่าง Bounding Box ของช็อกโกแลต](images/10-bounding-box.png) -->
-
----
 
 # 📤 Export Annotation
 
@@ -270,7 +255,9 @@ project-1-at-2026-10-05-21-40-5d7a3a3c.json
 
 <!-- ![Export Annotation เป็น JSON](images/11-export-json.png) -->
 
----
+<img width="382" height="85" alt="image" src="https://github.com/user-attachments/assets/4bb3706f-f597-46c0-acdb-dada123d86c3" />
+<img width="206" height="38" alt="image" src="https://github.com/user-attachments/assets/2d303f34-12b3-47f0-9c8d-5d0794958f83" />
+
 
 # 🔄 Convert Label Studio JSON → YOLO Dataset
 
@@ -312,6 +299,8 @@ python 01-export_dataset.py
 เมื่อสำเร็จจะได้ `dataset/images`, `dataset/labels`, `dataset/classes.txt` และ `dataset/data.yaml` พร้อมข้อความจำนวนภาพ Train และ Validation
 
 > **📸 ใส่รูปที่ 12:** แคป Terminal หลังแปลง Dataset สำเร็จ ให้เห็นชื่อคลาสและจำนวนภาพ บันทึกเป็น `images/12-export-dataset.png`
+> <img width="236" height="70" alt="image" src="https://github.com/user-attachments/assets/a03bfd81-feae-406d-afc4-fc60f27602a8" />
+
 
 <!-- ![ผลการแปลง Dataset](images/12-export-dataset.png) -->
 
@@ -342,7 +331,8 @@ names: ['chocalateHershey', 'chocolateBonBon', 'chocolateCookkies', 'chocolateGe
 
 <!-- ![ตั้งค่า Dataset](images/13-dataset-config.png) -->
 
----
+<img width="1185" height="170" alt="image" src="https://github.com/user-attachments/assets/be571990-b87f-4515-a3f3-4a8558224b0a" />
+
 
 # 🧠 Train YOLO26
 
@@ -386,6 +376,8 @@ python 02-train.py
 > **📸 ใส่รูปที่ 14:** แคป Terminal ระหว่าง Train ให้เห็นโมเดลและค่า Epoch บันทึกเป็น `images/14-training.png`
 
 <!-- ![การ Train YOLO26](images/14-training.png) -->
+<img width="1262" height="510" alt="image" src="https://github.com/user-attachments/assets/fd0ccb17-623c-48b9-baa6-0e2edf93948e" />
+
 
 เมื่อ Train เสร็จ ให้ดูตำแหน่งผลลัพธ์จาก Terminal และหาไฟล์ `weights/best.pt` ในโฟลเดอร์ของรอบนั้น แล้วนำ Path ไปใส่ในสคริปต์ทดสอบทั้งสามไฟล์
 
@@ -394,12 +386,8 @@ python 02-train.py
 > **📸 ใส่รูปที่ 15:** แคป Terminal หลัง Train เสร็จ ให้เห็นผล Validation และตำแหน่งบันทึกผล บันทึกเป็น `images/15-training-complete.png`
 
 <!-- ![ผลหลัง Train เสร็จ](images/15-training-complete.png) -->
+<img width="1170" height="607" alt="image" src="https://github.com/user-attachments/assets/1cbd4db1-f8f9-45fc-b8d6-f36d3469f253" />
 
-> **📸 ใส่รูปที่ 16:** ใส่กราฟผล Training จากรอบที่ใช้งาน เช่น `results.png` หากมี บันทึกเป็น `images/16-training-results.png`
-
-<!-- ![กราฟผล Training](images/16-training-results.png) -->
-
----
 
 # 🧪 Test Model
 
@@ -435,7 +423,8 @@ python 03-test_image.py
 
 <!-- ![ผลตรวจจับช็อกโกแลตจากภาพ](images/18-image-result.png) -->
 
----
+<img width="646" height="1003" alt="Screenshot 2026-10-06 100041" src="https://github.com/user-attachments/assets/00d1287c-02ec-4999-a419-df037128f527" />
+
 
 # 🎥 2. Test Video
 
@@ -467,7 +456,7 @@ python 04-test_video.py
 
 <!-- ![ผลตรวจจับช็อกโกแลตจากวิดีโอ](images/20-video-result.png) -->
 
----
+<img width="610" height="1120" alt="image" src="https://github.com/user-attachments/assets/a5816f34-620f-4a54-b958-bfcefc84dcd7" />
 
 # 📷 3. Test Camera
 
@@ -501,8 +490,8 @@ python 05-test-camera.py
 > **📸 ใส่รูปที่ 21:** แคปหน้าต่างกล้องขณะตรวจจับช็อกโกแลตแบบ Real-time บันทึกเป็น `images/21-camera-result.png`
 
 <!-- ![ผลตรวจจับช็อกโกแลตผ่าน Webcam](images/21-camera-result.png) -->
+---<img width="1917" height="1003" alt="Screenshot 2026-10-06 100041" src="https://github.com/user-attachments/assets/72d61795-ea96-40de-9b58-1fc05d5607d3" />
 
----
 
 # ⚠️ Notes
 
