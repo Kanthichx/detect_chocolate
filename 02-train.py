@@ -8,7 +8,7 @@ if __name__ == '__main__':
     # เริ่มเทรนพร้อมตั้งค่า Data Augmentation
     results = model.train(
         data='dataset/data.yaml',  # แก้ไขพาธไฟล์คอนฟิกให้ถูกต้อง
-        epochs=100,
+        epochs=200,
         imgsz=640,
         optimizer="MuSGD",
         device=0,
