@@ -47,9 +47,7 @@ detect_chocolate-main/
     └── detect/          # ผลลัพธ์จากการ Train และ Predict
 ```
 
-> ZIP มี Dataset และไฟล์ JSON แล้ว แต่ไม่มีโฟลเดอร์ภาพต้นฉบับ `Frame/images`, วิดีโอทดสอบ หรือไฟล์โมเดลที่เทรนแล้ว `best.pt` หากใช้ Dataset ที่มีอยู่ สามารถข้ามขั้นตอนทำ Label และแปลง JSON แล้วเริ่มจากแก้ `dataset/data.yaml` ก่อน Train ได้เลย
-
-> **📸 ใส่รูปที่ 1:** แคปหน้า VS Code ที่แสดงโครงสร้างไฟล์โปรเจกต์ บันทึกเป็น `images/01-project-structure.png`
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/7336335f-fa59-4df6-82c6-3b0ae01d1e6e" />
 
 <!-- ![โครงสร้างโปรเจกต์](images/01-project-structure.png) -->
 
