@@ -88,8 +88,6 @@ env\Scripts\activate.bat
 .\env\Scripts\Activate.ps1
 ```
 
-> **📸 ใส่รูปที่ 2:** แคป Terminal หลัง Activate สำเร็จ โดยให้เห็น `(env)` บันทึกเป็น `images/02-activate-env.png`
-
 <!-- ![Activate Virtual Environment](images/02-activate-env.png) -->
 
 ## 3. ติดตั้ง Dependencies
@@ -100,9 +98,6 @@ pip install -U ultralytics
 pip install opencv-python label-studio
 ```
 
-`ultralytics` ใช้สำหรับ Train และ Predict, `opencv-python` ใช้สำหรับกล้องและแสดงภาพ ส่วน `label-studio` ใช้เตรียม Label หากใช้ Dataset ที่มีอยู่แล้ว ไม่จำเป็นต้องทำขั้นตอน Label ใหม่
-
-> `requirements.txt` ใน ZIP ยังเป็นไฟล์ว่าง จึงต้องติดตั้ง Package ตามคำสั่งด้านบน
 
 ## 4. ตรวจสอบอุปกรณ์สำหรับ Train
 
